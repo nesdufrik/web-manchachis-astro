@@ -66,10 +66,74 @@ const menuItems = [
 				</button>
 			</div>
 			<div class="md:hidden">
-				<button class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+				<button
+					class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-2xl hover:text-secondary transition-colors"
+					id="mobile-menu-button"
+				>
 					<span class="material-symbols-outlined">menu</span>
 				</button>
+			</div>
+			<!-- Mobile menu -->
+
+			<div
+				class="fixed inset-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm z-40 md:hidden hidden"
+				id="mobile-menu"
+			>
+				<div
+					class="bg-background-light dark:bg-background-dark border-b border-border-light dark:border-border-dark"
+				>
+					<div class="flex items-center justify-between p-3">
+						<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">
+							MTB <span class="text-secondary">Manchachis</span>
+						</h2>
+						<button
+							class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 text-2xl hover:text-secondary transition-colors"
+						>
+							<span class="material-symbols-outlined">close</span>
+						</button>
+					</div>
+					<nav class="flex flex-col gap-2 p-6">
+						{
+							menuItems.map((item) => (
+								<a
+									class="text-base font-medium leading-normal hover:text-primary transition-colors rounded-lg bg-card-light dark:bg-card-dark p-2"
+									href={item.href}
+								>
+									{item.name}
+								</a>
+							))
+						}
+						<button
+							class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 p-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors"
+						>
+							<span class="truncate">Inscríbete</span>
+						</button>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</div>
 </header>
+
+<script>
+	const mobileMenuButton = document.getElementById('mobile-menu-button')
+	const mobileMenu = document.getElementById('mobile-menu')
+
+	if (!mobileMenuButton || !mobileMenu) {
+		throw new Error('Mobile menu elements not found')
+	}
+
+	const closeButton = mobileMenu.querySelector('button')
+
+	if (!closeButton) {
+		throw new Error('Close button not found in mobile menu')
+	}
+
+	mobileMenuButton.addEventListener('click', () => {
+		mobileMenu.classList.toggle('hidden')
+	})
+
+	closeButton.addEventListener('click', () => {
+		mobileMenu.classList.add('hidden')
+	})
+</script>

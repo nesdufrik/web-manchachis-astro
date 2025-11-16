@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title="MTB Manchachis - Reglamento Oficial">
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+		<div class="flex flex-col lg:flex-row lg:gap-12">
+			<!-- Barra lateral -->
+			<aside class="w-full lg:w-64 lg:shrink-0 mb-8 lg:mb-0">
+				<div class="lg:sticky lg:top-24">
+					<div
+						class="flex flex-col p-4 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark"
+					>
+						<div class="flex flex-col mb-4">
+							<h3
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-semibold leading-normal"
+							>
+								Índice
+							</h3>
+							<p
+								class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal"
+							>
+								Secciones del Reglamento
+							</p>
+						</div>
+						<nav class="flex flex-col gap-1">
+							<a
+								class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20"
+								href="#generales"
+							>
+								<span class="material-symbols-outlined text-primary text-xl"
+									>gavel</span
+								>
+								<p class="text-primary text-sm font-medium leading-normal">
+									Reglas Generales
+								</p>
+							</a>
+							<a
+								class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark/50 transition-colors"
+								href="#inscripcion"
+							>
+								<span
+									class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary text-xl"
+									>assignment_ind</span
+								>
+								<p
+									class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal"
+								>
+									Inscripción
+								</p>
+							</a>
+							<a
+								class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark/50 transition-colors"
+								href="#equipamiento"
+							>
+								<span
+									class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary text-xl"
+									>ev_station</span
+								>
+								<p
+									class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal"
+								>
+									Equipamiento
+								</p>
+							</a>
+							<a
+								class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark/50 transition-colors"
+								href="#ruta"
+							>
+								<span
+									class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary text-xl"
+									>signpost</span
+								>
+								<p
+									class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal"
+								>
+									Normas de la Ruta
+								</p>
+							</a>
+							<a
+								class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark/50 transition-colors"
+								href="#tiempos"
+							>
+								<span
+									class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary text-xl"
+									>timer</span
+								>
+								<p
+									class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal"
+								>
+									Tiempos
+								</p>
+							</a>
+							<a
+								class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-border-light dark:hover:bg-border-dark/50 transition-colors"
+								href="#seguridad"
+							>
+								<span
+									class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary text-xl"
+									>health_and_safety</span
+								>
+								<p
+									class="text-text-light-primary dark:text-text-dark-primary text-sm font-medium leading-normal"
+								>
+									Seguridad
+								</p>
+							</a>
+						</nav>
+					</div>
+				</div>
+			</aside>
+
+			<!-- Contenido principal -->
+			<main class="w-full">
+				<div class="flex flex-col gap-8">
+					<div
+						class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark"
+					>
+						<div class="flex min-w-72 flex-col gap-2">
+							<h1
+								class="text-text-light-primary dark:text-text-dark-primary text-4xl font-black leading-tight tracking-[-0.033em]"
+							>
+								Reglamento Oficial
+							</h1>
+							<p
+								class="text-text-light-secondary dark:text-text-dark-secondary text-base font-normal leading-normal"
+							>
+								El juego limpio y el respeto son la base de nuestra competencia.
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col gap-8">
+						<section class="scroll-mt-24" id="generales">
+							<h2
+								class="text-text-light-primary dark:text-text-dark-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-border-light dark:border-border-dark"
+							>
+								Reglas Generales de Conducta
+							</h2>
+							<p
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal pb-3 pt-4 px-4"
+							>
+								El comportamiento deportivo y el respeto mutuo son
+								fundamentales. Todos los participantes deben adherirse a los
+								principios de juego limpio en todo momento.
+							</p>
+							<ul
+								class="list-disc space-y-2 pl-10 pr-4 text-text-light-primary dark:text-text-dark-primary"
+							>
+								<li>
+									Respetar a los demás competidores, organizadores, voluntarios
+									y espectadores.
+								</li>
+								<li>No utilizar lenguaje ofensivo o conducta antideportiva.</li>
+								<li>
+									Seguir en todo momento las indicaciones del personal de la
+									carrera.
+								</li>
+								<li>
+									Asumir la responsabilidad personal de la seguridad propia y la
+									de los demás.
+								</li>
+							</ul>
+						</section>
+
+						<section class="scroll-mt-24" id="inscripcion">
+							<h2
+								class="text-text-light-primary dark:text-text-dark-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-border-light dark:border-border-dark"
+							>
+								Inscripción y Categorías
+							</h2>
+							<p
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal pb-3 pt-4 px-4"
+							>
+								La inscripción es personal e intransferible. Los participantes
+								deben competir en la categoría que corresponda a su edad y
+								género, según lo definido en las bases de la competencia.
+							</p>
+						</section>
+
+						<section class="scroll-mt-24" id="equipamiento">
+							<h2
+								class="text-text-light-primary dark:text-text-dark-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-border-light dark:border-border-dark"
+							>
+								Equipamiento Obligatorio
+							</h2>
+							<p
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal pb-3 pt-4 px-4"
+							>
+								Es obligatorio el uso de casco durante toda la prueba.
+							</p>
+							<div
+								class="mx-4 my-4 p-4 rounded-xl border-l-4 border-yellow-400 bg-yellow-400/20 text-yellow-800 dark:text-yellow-200"
+							>
+								<h4 class="font-bold">Nota Importante</h4>
+								<p class="text-sm">
+									La organización realizará revisiones de equipamiento. El
+									incumplimiento resultará en descalificación.
+								</p>
+							</div>
+						</section>
+
+						<section class="scroll-mt-24" id="ruta">
+							<h2
+								class="text-text-light-primary dark:text-text-dark-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-border-light dark:border-border-dark"
+							>
+								Normas de la Ruta
+							</h2>
+							<p
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal pb-3 pt-4 px-4"
+							>
+								Los ciclistas deben seguir el recorrido oficial marcado. Está
+								prohibido tomar atajos. El recorrido estará abierto al tráfico,
+								por lo que deben respetarse las normas de circulación.
+							</p>
+						</section>
+
+						<section class="scroll-mt-24" id="tiempos">
+							<h2
+								class="text-text-light-primary dark:text-text-dark-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-border-light dark:border-border-dark"
+							>
+								Tiempos y Clasificación
+							</h2>
+							<p
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal pb-3 pt-4 px-4"
+							>
+								El tiempo oficial se tomará mediante registro digital. La
+								clasificación se basará en el tiempo neto desde la salida hasta
+								la meta. Las decisiones de los jueces son finales.
+							</p>
+						</section>
+
+						<section class="scroll-mt-24" id="seguridad">
+							<h2
+								class="text-text-light-primary dark:text-text-dark-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 border-b border-border-light dark:border-border-dark"
+							>
+								Seguridad y Emergencias
+							</h2>
+							<p
+								class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal pb-3 pt-4 px-4"
+							>
+								En caso de emergencia, mantenga la calma y avise al personal más
+								cercano. Es obligatorio prestar auxilio a participantes
+								accidentados. Habrá puntos de asistencia a lo largo del
+								recorrido.
+							</p>
+						</section>
+
+						<div
+							class="mt-8 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark"
+						>
+							<h3
+								class="text-lg font-bold text-text-light-primary dark:text-text-dark-primary"
+							>
+								¿Tienes dudas?
+							</h3>
+							<p
+								class="text-text-light-secondary dark:text-text-dark-secondary mt-1"
+							>
+								Si tienes alguna pregunta sobre el reglamento, contacta a
+								nuestro equipo en
+								<a
+									class="text-primary font-medium hover:underline flex items-center gap-1"
+									href="#"
+								>
+									<span class="material-symbols-outlined">perm_phone_msg</span
+									>Manchachis.
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</Layout>
