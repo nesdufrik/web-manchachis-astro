@@ -1,16 +1,91 @@
 ---
-
+import Layout from '../layouts/Layout.astro'
+import Sponsors from '../components/Sponsors.astro'
+import Timer from '../components/Timer.astro'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="MTB Manchachis - Desafio Nocturno 2025">
+	<!-- Hero section -->
+	<section class="relative">
+		<div
+			class="flex min-h-[30vh] lg:min-h-[60vh] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 text-center"
+			style='background-image: linear-gradient(rgba(44, 62, 80, 0.6) 0%, rgba(44, 62, 80, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0S6BlT8yLUwellBCFf3bgZaqE-6i8aUgkDrd_WC-y95RqcsTDTmJEIbf17layhFViR2vY81saVEO3J7BB2zJsttO5Jwn5HFw_aFfJkmB-FykamwsdLDRhSTvBPUqC2Axu_WRuJg7cLsjUS1IYqTkThyD45Ous28aMx28Q7RQK8zSB0nmUnn-ltAD8BmzzyuuCxidlu1ktdU2BOBgtFTS7SuNxg-Z0oV_OI2P67uPr4AFZmWs6DpNKaVgxKz6ccbIl3gKPo4uvEFZL")'
+		>
+			<div class="flex flex-col gap-4 max-w-3xl">
+				<h1 class="text-white text-4xl md:text-6xl font-bold leading-tight">
+					8vo <span class="text-teal-600">desafío</span>
+					<span class="text-orange-400">nocturno</span>
+				</h1>
+				<h2 class="text-gray-200 md:text-4xl font-bold">
+					06 <span class="text-teal-600">-</span>
+					<span class="text-orange-400">diciembre</span>
+					<span class="text-teal-600">-</span> 2025
+				</h2>
+			</div>
+		</div>
+	</section>
+
+	<!-- Patrocinadores y colaboradores vendrán aquí. -->
+	<Sponsors title="Patrocinadores y Colaboradores" />
+
+	<div class="container mx-auto px-4 py-8">
+		<div class="flex flex-col max-w-4xl mx-auto gap-4">
+			<!-- Contador de tiempo para la carrera -->
+			<Timer title="Tiempo para la carrera" />
+
+			<!-- Enlaces rapidos -->
+			<section class="py-12">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+					<a
+						href="/categorias"
+						class="flex flex-col text-center gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+					>
+						<span class="material-symbols-outlined text-secondary text-4xl"
+							>category</span
+						>
+						<h2 class="text-base font-bold">Categorías</h2>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Descubre las diferentes categorías y encuentra tu lugar.
+						</p>
+					</a>
+					<a
+						href="/reglas"
+						class="flex flex-col text-center gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+					>
+						<span class="material-symbols-outlined text-secondary text-4xl"
+							>gavel</span
+						>
+						<h2 class="text-base font-bold">Reglas</h2>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Conoce el reglamento oficial de la competencia.
+						</p>
+					</a>
+					<a
+						href="/participar"
+						class="flex flex-col text-center gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+					>
+						<span class="material-symbols-outlined text-secondary text-4xl"
+							>how_to_reg</span
+						>
+						<h2 class="text-base font-bold">Cómo Participar</h2>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Sigue los pasos para formar parte de la carrera.
+						</p>
+					</a>
+					<a
+						href="/resultados"
+						class="flex flex-col text-center gap-3 rounded-lg border border-primary ring-2 ring-primary dark:border-primary bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+					>
+						<span class="material-symbols-outlined text-primary text-4xl"
+							>sensors</span
+						>
+						<h2 class="text-base font-bold text-primary">Resultados en Vivo</h2>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Sigue la acción y los tiempos en tiempo real.
+						</p>
+					</a>
+				</div>
+			</section>
+		</div>
+	</div>
+</Layout>

@@ -1,0 +1,103 @@
+---
+interface Props {
+	title?: string
+}
+
+const { title = 'Timer' } = Astro.props
+---
+
+<section>
+	<h4 class="text-sm uppercase font-bold text-center text-secondary">
+		{title}
+	</h4>
+	<div class="flex flex-wrap gap-4 py-6 px-4">
+		<div class="flex grow basis-0 flex-col items-stretch gap-2 min-w-[60px]">
+			<div
+				class="flex h-20 grow items-center justify-center rounded-lg px-3 bg-gray-200 dark:bg-gray-800"
+				id="timer-race-days"
+			>
+				<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">48</p>
+			</div>
+			<div class="flex items-center justify-center">
+				<p class="text-sm font-normal">Días</p>
+			</div>
+		</div>
+		<div class="flex grow basis-0 flex-col items-stretch gap-2 min-w-[60px]">
+			<div
+				class="flex h-20 grow items-center justify-center rounded-lg px-3 bg-gray-200 dark:bg-gray-800"
+				id="timer-race-hours"
+			>
+				<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">18</p>
+			</div>
+			<div class="flex items-center justify-center">
+				<p class="text-sm font-normal">Horas</p>
+			</div>
+		</div>
+		<div class="flex grow basis-0 flex-col items-stretch gap-2 min-w-[60px]">
+			<div
+				class="flex h-20 grow items-center justify-center rounded-lg px-3 bg-gray-200 dark:bg-gray-800"
+				id="timer-race-minutes"
+			>
+				<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">45</p>
+			</div>
+			<div class="flex items-center justify-center">
+				<p class="text-sm font-normal">Minutos</p>
+			</div>
+		</div>
+		<div class="flex grow basis-0 flex-col items-stretch gap-2 min-w-[60px]">
+			<div
+				class="flex h-20 grow items-center justify-center rounded-lg px-3 bg-gray-200 dark:bg-gray-800"
+				id="timer-race-seconds"
+			>
+				<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">33</p>
+			</div>
+			<div class="flex items-center justify-center">
+				<p class="text-sm font-normal">Segundos</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	const daysElement = document.getElementById('timer-race-days')
+	const hoursElement = document.getElementById('timer-race-hours')
+	const minutesElement = document.getElementById('timer-race-minutes')
+	const secondsElement = document.getElementById('timer-race-seconds')
+	const raceDate = new Date('December 6, 2025 18:00:00').getTime()
+
+	function updateTimer() {
+		const now = new Date().getTime()
+		const distance = raceDate - now
+
+		const days = Math.floor(distance / (1000 * 60 * 60 * 24))
+		const hours = Math.floor(
+			(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+		)
+		const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+		const seconds = Math.floor((distance % (1000 * 60)) / 1000)
+
+		if (daysElement)
+			daysElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">${days}</p>`
+		if (hoursElement)
+			hoursElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">${hours}</p>`
+		if (minutesElement)
+			minutesElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">${minutes}</p>`
+		if (secondsElement)
+			secondsElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">${seconds}</p>`
+
+		if (distance < 0) {
+			clearInterval(timerInterval)
+			if (daysElement)
+				daysElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">0</p>`
+			if (hoursElement)
+				hoursElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">0</p>`
+			if (minutesElement)
+				minutesElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">0</p>`
+			if (secondsElement)
+				secondsElement.innerHTML = `<p class="text-gray-800 dark:text-gray-100 text-4xl font-bold">0</p>`
+		}
+	}
+
+	const timerInterval = setInterval(updateTimer, 1000)
+	updateTimer()
+</script>
