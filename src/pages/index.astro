@@ -2,9 +2,13 @@
 import Layout from '../layouts/Layout.astro'
 import Sponsors from '../components/Sponsors.astro'
 import Timer from '../components/Timer.astro'
+import Participacion from '../components/Participacion.astro'
 ---
 
-<Layout title="MTB Manchachis - Desafio Nocturno 2025">
+<Layout
+	title="MTB Manchachis - Desafio Nocturno 2025"
+	description="Únete al 8vo Desafío Nocturno MTB Manchachis el 6 de diciembre de 2025. Descubre categorías, reglas y resultados en vivo. ¡Inscríbete ahora!"
+>
 	<!-- Hero section -->
 	<section class="relative">
 		<div
@@ -12,11 +16,19 @@ import Timer from '../components/Timer.astro'
 			style='background-image: linear-gradient(rgba(44, 62, 80, 0.6) 0%, rgba(44, 62, 80, 0.8) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0S6BlT8yLUwellBCFf3bgZaqE-6i8aUgkDrd_WC-y95RqcsTDTmJEIbf17layhFViR2vY81saVEO3J7BB2zJsttO5Jwn5HFw_aFfJkmB-FykamwsdLDRhSTvBPUqC2Axu_WRuJg7cLsjUS1IYqTkThyD45Ous28aMx28Q7RQK8zSB0nmUnn-ltAD8BmzzyuuCxidlu1ktdU2BOBgtFTS7SuNxg-Z0oV_OI2P67uPr4AFZmWs6DpNKaVgxKz6ccbIl3gKPo4uvEFZL")'
 		>
 			<div class="flex flex-col gap-4 max-w-3xl">
-				<h1 class="text-white text-4xl md:text-6xl font-bold leading-tight">
+				<h1
+					class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight"
+				>
 					8vo <span class="text-teal-600">desafío</span>
 					<span class="text-orange-400">nocturno</span>
 				</h1>
-				<h2 class="text-gray-200 md:text-4xl font-bold">
+				<p class="text-gray-200 text-sm md:text-base">
+					Únete a la carrera más emocionante del año y pon a prueba tus límites.
+					El camino te espera.
+				</p>
+				<h2
+					class="text-gray-200 text-xl md:text-3xl font-black leading-tight tracking-tight"
+				>
 					06 <span class="text-teal-600">-</span>
 					<span class="text-orange-400">diciembre</span>
 					<span class="text-teal-600">-</span> 2025
@@ -35,7 +47,7 @@ import Timer from '../components/Timer.astro'
 
 			<!-- Enlaces rapidos -->
 			<section class="py-12">
-				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					<a
 						href="/categorias"
 						class="flex flex-col text-center gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
@@ -61,18 +73,6 @@ import Timer from '../components/Timer.astro'
 						</p>
 					</a>
 					<a
-						href="/participar"
-						class="flex flex-col text-center gap-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-					>
-						<span class="material-symbols-outlined text-secondary text-4xl"
-							>how_to_reg</span
-						>
-						<h2 class="text-base font-bold">Cómo Participar</h2>
-						<p class="text-sm text-gray-600 dark:text-gray-400">
-							Sigue los pasos para formar parte de la carrera.
-						</p>
-					</a>
-					<a
 						href="/resultados"
 						class="flex flex-col text-center gap-3 rounded-lg border border-primary ring-2 ring-primary dark:border-primary bg-background-light dark:bg-background-dark p-6 items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
 					>
@@ -86,6 +86,9 @@ import Timer from '../components/Timer.astro'
 					</a>
 				</div>
 			</section>
+
+			<!-- Cómo participar -->
+			<Participacion />
 		</div>
 	</div>
 </Layout>
