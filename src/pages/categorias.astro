@@ -1,20 +1,5 @@
 ---
-import { supabase } from '../db/supabase.js'
 import Layout from '../layouts/Layout.astro'
-
-const event_id = '6c2aae06-a9f5-449f-b873-08b51767dcac' // Reemplaza con el ID del evento que deseas consultar
-
-const { data: evento, error } = await supabase
-	.from('events')
-	.select(`*, start_groups(* , categories(*))`)
-	.eq('id', event_id)
-	.single()
-
-if (error) {
-	console.error('Error fetching categories:', error)
-} else {
-	console.log('Categories:', evento)
-}
 
 const categories = [
 	{
@@ -95,7 +80,7 @@ const categories = [
 				categories?.map((category) => (
 					<div class="flex flex-col rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
 						<div
-							class="w-full bg-center bg-no-repeat aspect-video sm:aspect-[2/1] bg-cover"
+							class="w-full bg-center bg-no-repeat aspect-video sm:aspect-2/1 bg-cover"
 							style={`background-image: url("${category.image}")`}
 						/>
 						<div class="flex flex-col flex-1 p-6">
