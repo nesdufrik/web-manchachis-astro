@@ -116,6 +116,19 @@ const submitForm = async () => {
 		alert('¡Registro completado exitosamente!')
 
 		// Opcional: Limpiar formulario o redirigir
+		newParticipant.value = {
+			event_id: currentEventId,
+			category_id: '',
+			full_name: '',
+			email: '',
+			phone: '+591',
+			birth_date: '',
+			gender: '',
+			start_group_id: '',
+			terms: false,
+			receipt: null,
+			receipt_url: '',
+		}
 	} catch (error) {
 		console.error('Error:', error)
 		alert('Hubo un error al registrar: ' + (error.message || error))
@@ -280,8 +293,14 @@ onMounted(() => {
 							v-model="newParticipant.terms"
 						/>
 						<span class="text-sm text-slate-700 dark:text-slate-300"
-							>He leído y acepto el reglamento y la exención de
-							responsabilidad.</span
+							>He leído y acepto el
+							<a href="/reglas" target="_blank" class="text-primary"
+								>reglamento</a
+							>
+							y la
+							<a href="/reglas#absolucion" target="_blank" class="text-primary"
+								>absolución de responsabilidad</a
+							>.</span
 						>
 					</label>
 				</div>
