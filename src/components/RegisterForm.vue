@@ -17,6 +17,7 @@ const newParticipant = ref({
 	gender: '',
 	start_group_id: '',
 	terms: false,
+	team: '',
 	receipt: null,
 	receipt_url: '',
 })
@@ -96,6 +97,7 @@ const submitForm = async () => {
 			p_phone: participantData.phone,
 			p_birth_date: participantData.birth_date,
 			p_gender: participantData.gender,
+			p_team: participantData.team,
 			p_terms: participantData.terms,
 			p_receipt_url: participantData.receipt_url,
 		})
@@ -116,6 +118,7 @@ const submitForm = async () => {
 			gender: '',
 			start_group_id: '',
 			terms: false,
+			team: '',
 			receipt: null,
 			receipt_url: '',
 		}
