@@ -342,13 +342,15 @@ onMounted(() => {
 					<div class="overflow-hidden rounded-xl bg-white p-2 shadow-sm">
 						<!-- Reemplazar src con la ruta real de la imagen del QR -->
 						<img
-							:src="genderQR.find((p) => p.gender === newParticipant.gender).qr"
+							:src="
+								genderQR.find((p) => p.gender === newParticipant.gender)?.qr
+							"
 							alt="QR de Pago"
 							class="h-48 w-48 object-contain"
 						/>
 						<a
 							:href="
-								genderQR.find((p) => p.gender === newParticipant.gender).qr
+								genderQR.find((p) => p.gender === newParticipant.gender)?.qr
 							"
 							download="QR-Pago-Desafio-Manchachis.png"
 							class="mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-slate-100 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-colors"
