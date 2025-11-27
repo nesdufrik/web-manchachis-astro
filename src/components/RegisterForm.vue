@@ -130,12 +130,12 @@ const submitForm = async () => {
 const genderQR = [
 	{
 		gender: 'male',
-		qr: '/qr/qr-varones.png',
+		qr: '/qr/qr-varones.jpg',
 		price: 50,
 	},
 	{
 		gender: 'female',
-		qr: '/qr/qr-damas.png',
+		qr: '/qr/qr-damas.jpg',
 		price: 35,
 	},
 ]
@@ -353,7 +353,7 @@ onMounted(() => {
 							:href="
 								genderQR.find((p) => p.gender === newParticipant.gender)?.qr
 							"
-							download="QR-Pago-Desafio-Manchachis.png"
+							download="QR-Pago-Desafio-Manchachis.jpg"
 							class="mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-slate-100 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-colors"
 						>
 							<span class="material-symbols-outlined">download</span>
