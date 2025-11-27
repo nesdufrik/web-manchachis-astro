@@ -7,52 +7,100 @@ const { title = 'Sponsors' } = Astro.props
 
 const sponsors = [
 	{
-		name: 'Trek Bikes',
-		logo: '🚴',
+		name: 'collitas',
+		logo: '🍪',
 		color: '#FF5900',
-		url: '/logos/trek-logo.svg',
+		url: '/logos/collitas-logo.webp',
 	},
 	{
-		name: 'Shimano',
-		logo: '⚙️',
-		color: '#1F4E78',
-		url: '/logos/shimano-logo.webp',
+		name: 'creha',
+		logo: '🏠',
+		color: '#FF5900',
+		url: '/logos/creha-logo.webp',
 	},
 	{
-		name: 'GoPro',
-		logo: '📹',
-		color: '#19A0C8',
-		url: '/logos/gopro-logo.svg',
+		name: 'ivana',
+		logo: '👩',
+		color: '#FF5900',
+		url: '/logos/ivana-logo.webp',
 	},
 	{
-		name: 'Red Bull',
-		logo: '🐂',
-		color: '#001D3D',
-		url: '/logos/redbull-logo.webp',
+		name: 'mdb',
+		logo: '🏃',
+		color: '#FF5900',
+		url: '/logos/mdb-logo.webp',
 	},
 	{
-		name: 'Garmin',
-		logo: '📍',
-		color: '#004B87',
-		url: '/logos/garmin-logo.svg',
+		name: 'minera',
+		logo: '⛏',
+		color: '#FF5900',
+		url: '/logos/minera-logo.webp',
 	},
 	{
-		name: 'Canyon',
-		logo: '🏔️',
-		color: '#000000',
-		url: '/logos/canyon-logo.webp',
+		name: 'nonis',
+		logo: ' 🏃',
+		color: '#FF5900',
+		url: '/logos/nonis-logo.webp',
 	},
 	{
-		name: 'Wahoo',
-		logo: '📊',
-		color: '#2E8B57',
-		url: '/logos/wahoo-logo.webp',
+		name: 'opticentro',
+		logo: 'opticentro',
+		color: '#FF5900',
+		url: '/logos/opticentro-logo.webp',
 	},
 	{
-		name: 'PowerBar',
-		logo: '⚡',
-		color: '#FFB81C',
-		url: '/logos/powerbar-logo.svg',
+		name: 'salvietti',
+		logo: 'salvietti',
+		color: '#FF5900',
+		url: '/logos/salvietti-logo.webp',
+	},
+	{
+		name: 'samary',
+		logo: 'samary',
+		color: '#FF5900',
+		url: '/logos/samary-logo.webp',
+	},
+	{
+		name: 'san agustin',
+		logo: 'san agustin',
+		color: '#FF5900',
+		url: '/logos/san-agustin-logo.webp',
+	},
+	{
+		name: 'servicios generales',
+		logo: 'servicios generales',
+		color: '#FF5900',
+		url: '/logos/servicios-generales-logo.webp',
+	},
+	{
+		name: 'sprint',
+		logo: 'sprint',
+		color: '#FF5900',
+		url: '/logos/sprint-logo.webp',
+	},
+	{
+		name: 'tejasur',
+		logo: 'tejasur',
+		color: '#FF5900',
+		url: '/logos/tejasur-logo.webp',
+	},
+	{
+		name: 'tercer tiempo',
+		logo: 'tercer tiempo',
+		color: '#FF5900',
+		url: '/logos/tercer-tiempo-logo.webp',
+	},
+	{
+		name: 'veterinaria',
+		logo: 'veterinaria',
+		color: '#FF5900',
+		url: '/logos/veterinaria-logo.webp',
+	},
+	{
+		name: 'yerbatero',
+		logo: 'yerbatero',
+		color: '#FF5900',
+		url: '/logos/yerbatero-logo.webp',
 	},
 ]
 ---
@@ -66,13 +114,13 @@ const sponsors = [
 			{
 				sponsors.map((sponsor) => (
 					<div class="sponsor-item">
-						<div class="sponsor-card bg-gray-700/10 dark:bg-gray-400/10">
+						<div class="sponsor-card bg-gray-700/10 dark:bg-gray-400/40">
 							<div class="sponsor-logo">
 								{sponsor.url ? (
 									<img
 										src={sponsor.url}
 										alt={sponsor.name}
-										style="height: 2rem; width: auto;"
+										style="height: 4rem; width: auto;"
 									/>
 								) : (
 									<span style={`color: ${sponsor.color}`}>{sponsor.logo}</span>
@@ -85,13 +133,13 @@ const sponsors = [
 			{
 				sponsors.map((sponsor) => (
 					<div class="sponsor-item">
-						<div class="sponsor-card bg-gray-700/10 dark:bg-gray-400/10">
+						<div class="sponsor-card bg-gray-700/10 dark:bg-gray-400/40">
 							<div class="sponsor-logo">
 								{sponsor.url ? (
 									<img
 										src={sponsor.url}
 										alt={sponsor.name}
-										style="height: 2rem; width: auto;"
+										style="height: 4rem; width: auto;"
 									/>
 								) : (
 									<span style={`color: ${sponsor.color}`}>{sponsor.logo}</span>
@@ -145,7 +193,7 @@ const sponsors = [
 		display: flex;
 		gap: 1rem;
 		animation: scroll-sponsors 35s linear infinite;
-		width: fit-content;
+		width: min-content;
 	}
 
 	@keyframes scroll-sponsors {
@@ -206,7 +254,7 @@ const sponsors = [
 	}
 
 	.sponsor-logo {
-		font-size: 1.5rem;
+		font-size: 3rem;
 		display: inline-block;
 		position: relative;
 		z-index: 1;
