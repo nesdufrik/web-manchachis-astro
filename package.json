@@ -14,7 +14,7 @@
     "@fontsource-variable/material-symbols-outlined": "^5.2.28",
     "@supabase/supabase-js": "^2.81.1",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.15.7",
+    "astro": "^5.16.1",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.25"
   }

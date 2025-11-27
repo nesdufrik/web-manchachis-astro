@@ -20,17 +20,6 @@ const newParticipant = ref({
 	receipt_url: '',
 })
 
-const price = [
-	{
-		gender: 'male',
-		price: 50,
-	},
-	{
-		gender: 'female',
-		price: 35,
-	},
-]
-
 const loadEvent = async (idEvent) => {
 	const { data: groups, error } = await supabase
 		.from('start_groups')
@@ -137,6 +126,19 @@ const submitForm = async () => {
 	}
 }
 
+const genderQR = [
+	{
+		gender: 'male',
+		qr: '/qr/qr-varones.png',
+		price: 50,
+	},
+	{
+		gender: 'female',
+		qr: '/qr/qr-damas.png',
+		price: 35,
+	},
+]
+
 onMounted(() => {
 	loadEvent(currentEventId)
 })
@@ -155,7 +157,7 @@ onMounted(() => {
 						<p
 							class="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200"
 						>
-							Nombre
+							Nombre Completo
 						</p>
 						<input
 							class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50 dark:placeholder:text-slate-500"
@@ -168,13 +170,16 @@ onMounted(() => {
 						<p
 							class="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200"
 						>
-							Apellidos
+							Género
 						</p>
-						<input
-							class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50 dark:placeholder:text-slate-500"
-							placeholder="Ingresa tus apellidos"
-							type="text"
-						/>
+						<select
+							class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50"
+							v-model="newParticipant.gender"
+						>
+							<option value="" disabled>Seleccionar...</option>
+							<option value="male">Masculino</option>
+							<option value="female">Femenino</option>
+						</select>
 					</label>
 					<label class="flex flex-col">
 						<p
@@ -193,16 +198,14 @@ onMounted(() => {
 						<p
 							class="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200"
 						>
-							Género
+							Club/Equipo
 						</p>
-						<select
-							class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50"
-							v-model="newParticipant.gender"
-						>
-							<option value="" disabled>Seleccionar...</option>
-							<option value="male">Masculino</option>
-							<option value="female">Femenino</option>
-						</select>
+						<input
+							class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50 dark:placeholder:text-slate-500"
+							placeholder="Ingresa el nombre de tu club"
+							type="text"
+							v-model="newParticipant.team"
+						/>
 					</label>
 				</div>
 			</div>
@@ -317,7 +320,8 @@ onMounted(() => {
 							Bs.
 							{{
 								newParticipant.gender
-									? price.find((p) => p.gender === newParticipant.gender).price
+									? genderQR.find((p) => p.gender === newParticipant.gender)
+											.price
 									: 0.0
 							}}
 						</p>
@@ -338,12 +342,14 @@ onMounted(() => {
 					<div class="overflow-hidden rounded-xl bg-white p-2 shadow-sm">
 						<!-- Reemplazar src con la ruta real de la imagen del QR -->
 						<img
-							src="/qr/BNB-qr.png"
+							:src="genderQR.find((p) => p.gender === newParticipant.gender).qr"
 							alt="QR de Pago"
 							class="h-48 w-48 object-contain"
 						/>
 						<a
-							href="/qr/BNB-qr.png"
+							:href="
+								genderQR.find((p) => p.gender === newParticipant.gender).qr
+							"
 							download="QR-Pago-Desafio-Manchachis.png"
 							class="mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-slate-100 py-2 text-sm font-medium text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-200 dark:hover:bg-slate-600 transition-colors"
 						>
