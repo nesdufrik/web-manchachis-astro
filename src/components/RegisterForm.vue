@@ -1,9 +1,10 @@
 <script setup>
 import { useSupabase } from '../db/supabase'
 import { computed, onMounted, ref } from 'vue'
+import { EVENT_ID } from '../config'
 
 const { supabase } = useSupabase()
-const currentEventId = '9e838735-1bd0-4efb-9a30-1ce9cc08b0b9'
+const currentEventId = EVENT_ID
 const startGroups = ref([])
 
 const newParticipant = ref({
