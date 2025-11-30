@@ -168,6 +168,7 @@ onMounted(() => {
 							placeholder="Ingresa tu nombre"
 							type="text"
 							v-model="newParticipant.full_name"
+							required
 						/>
 					</label>
 					<label class="flex flex-col">
@@ -179,6 +180,7 @@ onMounted(() => {
 						<select
 							class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50"
 							v-model="newParticipant.gender"
+							required
 						>
 							<option value="" disabled>Seleccionar...</option>
 							<option value="male">Masculino</option>
@@ -243,6 +245,7 @@ onMounted(() => {
 							placeholder="+591 12345678"
 							type="tel"
 							v-model="newParticipant.phone"
+							required
 						/>
 					</label>
 				</div>
@@ -262,6 +265,7 @@ onMounted(() => {
 						<select
 							class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50"
 							v-model="newParticipant.start_group_id"
+							required
 						>
 							<option value="" disabled>Selecciona un grupo...</option>
 							<option v-for="group in startGroups" :value="group.id">
@@ -278,6 +282,7 @@ onMounted(() => {
 						<select
 							class="form-select flex w-full min-w-0 flex-1 overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50"
 							v-model="newParticipant.category_id"
+							required
 						>
 							<option value="" disabled>Selecciona una categoria...</option>
 							<option v-for="category in categories" :value="category.id">
@@ -380,6 +385,7 @@ onMounted(() => {
 							type="file"
 							accept="image/*,application/pdf"
 							@change="(e) => (newParticipant.receipt = e.target.files[0])"
+							required
 						/>
 						<span class="pt-1 text-xs text-slate-500 dark:text-slate-400">
 							Sube una imagen o PDF del comprobante de la transferencia.
