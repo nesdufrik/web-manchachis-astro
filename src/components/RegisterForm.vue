@@ -383,12 +383,12 @@ onMounted(() => {
 						<input
 							class="block w-full cursor-pointer rounded-lg border border-slate-300 bg-background-light text-sm text-slate-500 file:mr-4 file:cursor-pointer file:border-0 file:bg-primary file:px-4 file:py-3 file:text-sm file:font-semibold file:text-white hover:file:bg-primary/90 focus:outline-none dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400"
 							type="file"
-							accept="image/*,application/pdf"
+							accept="image/*"
 							@change="(e) => (newParticipant.receipt = e.target.files[0])"
 							required
 						/>
 						<span class="pt-1 text-xs text-slate-500 dark:text-slate-400">
-							Sube una imagen o PDF del comprobante de la transferencia.
+							Sube una imagen del comprobante de la transferencia. (Max. 10Mb)
 						</span>
 					</label>
 
