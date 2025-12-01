@@ -204,7 +204,7 @@ onMounted(() => {
 						<p
 							class="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200"
 						>
-							Club/Equipo
+							Club/Equipo <span class="text-xs">(opcional)</span>
 						</p>
 						<input
 							class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50 dark:placeholder:text-slate-500"
@@ -225,7 +225,7 @@ onMounted(() => {
 						<p
 							class="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200"
 						>
-							Correo Electrónico
+							Correo Electrónico <span class="text-xs">(opcional)</span>
 						</p>
 						<input
 							class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-slate-300 bg-background-light p-3 text-base text-slate-900 placeholder:text-slate-400 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/20 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-50 dark:placeholder:text-slate-500"
